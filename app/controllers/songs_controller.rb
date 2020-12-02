@@ -47,7 +47,8 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title)
+    params.require(:song).permit(:title, :artist_name, :genre_id, song_notes: [])
+    # will return unpermitted param, if you don't specify a param is meant to be an array
   end
 end
 

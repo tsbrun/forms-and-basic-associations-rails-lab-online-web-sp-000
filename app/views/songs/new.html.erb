@@ -5,6 +5,20 @@
   <%= f.text_field :title %>
   <br />
 
+  <%= f.label :artist_name %>
+  <%= f.text_field :artist_name %>
+  <br />
+
+  <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+  <!-- collection_select(which of the permitted paramaters are you modifying, from which collection, what value to put in params, what to display in dropdown menu) -->
+  <br />
+
+  <input id="song_notes_1" name="song[song_notes][]">
+  <br />
+
+  <input id="song_notes_2" name="song[song_notes][]">
+  <br />
+
   <%= f.submit %>
 <% end %>
 
